@@ -1,0 +1,59 @@
+.pic-flip-wrapper {
+  display: flex;
+  justify-content: center;
+  margin: 60px auto;
+  perspective: 1000px;
+}
+
+.pic-flip-box {
+  width: 400px;
+  height: 200px;
+  perspective: 1000px;
+}
+
+.pic-flip-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+  border-radius: 12px;
+}
+
+.pic-flip-box:hover .pic-flip-inner {
+  transform: rotateY(180deg);
+}
+
+.pic-front,
+.pic-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.pic-front {
+  background-color: #fff;
+}
+
+.pic-front img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.pic-back {
+  background-color: #f0f4ff;
+  color: #222;
+  transform: rotateY(180deg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
